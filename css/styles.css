@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0f0d0f;
+    font-family: 'Lato', sans-serif;
+}
+
+button {
+    border: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.main {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    width: 100%;
+}
+
+.nav ul {
+    display: flex;
+    background: linear-gradient(45deg, transparent, #7e7e7e, transparent, #7e7e7e, transparent);
+    border-radius: 60px;
+    padding: 20px;
+    position: relative;
+}
+
+.nav ul:before {
+    border-radius: 60px;
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background: #0f0d0f;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li .tab_button {
+    background: none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.nav ul li .tab_button:before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+    width: 40px;
+    height: 16px;
+    background: #37e393;
+    border-radius: 10px;
+    transition: .5s;
+    z-index: -1;
+}
+
+.nav ul li .tab_button:hover:before,
+.nav ul li .active_tab_button:before {
+    transform: translateX(-50%) translateY(0px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav ul li .tab_button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.nav ul li .tab_button .icon {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.nav ul li .tab_button .icon:before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0b86b5;
+    box-shadow: 0px 10px 30px #0b86b5;
+    top: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.nav ul li .tab_button:hover .icon:before,
+.nav ul li .active_tab_button .icon:before {
+    top: -60px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav ul li .tab_button .icon i {
+    color: #7e7e7e;
+    display: block;
+    font-size: 24px;
+    position: relative;
+    transition: .5s;
+    z-index: 1;
+}
+
+.nav ul li .tab_button:hover .icon i,
+.nav ul li .active_tab_button .icon i {
+    color: #fff;
+    transform: translateY(-42px);
+}
+
+.nav ul li .tab_button .name {
+    color: #7e7e7e;
+    display: block;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.nav ul li .tab_button:hover .name,
+.nav ul li .active_tab_button .name {
+    color: #fff;
+}
